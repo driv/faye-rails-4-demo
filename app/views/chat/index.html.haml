@@ -1,0 +1,15 @@
+%ul#chat
+  - @chat_messages.each do |chat_message|
+    %li
+      = chat_message.created_at.strftime('%-d/%-m/%Y %k:%M:%S')
+      = ':'
+      = chat_message.message
+
+%hr
+
+%input{type: 'text', name: 'message', id: 'message'}
+%button Post
+
+%hr
+
+%a{href: 'https://github.com/jamesotron/faye-rails-demo'} Source on Github.
